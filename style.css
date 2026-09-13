@@ -1,19 +1,16 @@
 /* =========================================
-   HOTELBASE — IDENTIDADE "RIVIERA OLD MONEY"
-   Paleta: mar profundo, linho, terracota vela,
-   dourado latão — referência à Riviera Italiana
-   dos anos 50/60 (Portofino, Capri).
+   HOTELBASE — IDENTIDADE "RIVIERA OLD MONEY" (Corrigido)
    ========================================= */
 :root {
-    --marine:        #10263B;   /* azul-marinho profundo, o casco do barco */
+    --marine:        #10263B;
     --marine-deep:    #0A1B2C;
-    --linen:          #F6F1E4;   /* areia/linho, fundo geral */
+    --linen:          #F6F1E4;
     --linen-soft:     #FBF8F1;
-    --sail-terracotta:#C1652E;   /* toldo/vela — laranja queimado */
+    --sail-terracotta:#C1652E;
     --sail-terracotta-dark:#9C4E22;
-    --brass:          #B08D3F;   /* dourado latão, leme e joias */
+    --brass:          #B08D3F;
     --brass-light:    #D8BE7E;
-    --denim:          #6E8EA3;   /* mar/céu desbotado */
+    --denim:          #6E8EA3;
     --ink:            #1E2A30;
     --glass-navy:     rgba(16, 38, 59, 0.42);
     --glass-navy-strong: rgba(16, 38, 59, 0.62);
@@ -21,7 +18,14 @@
     --hairline:       rgba(176, 141, 63, 0.35);
 }
 
-/* RESET BÁSICO */
+/* BLINDARE CONTRA O SCROLL LATERAL (QUEBRA DO LADO) */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -35,7 +39,6 @@ body {
     line-height: 1.65;
 }
 
-/* Títulos com design Europeu Clássico */
 h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
     font-weight: 600;
@@ -58,20 +61,20 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
 
 .logo {
     display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 1.5rem;
-  font-weight: 800;
-  text-decoration: none;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--marine);
 }
 
 .logo img {
-    color: var(--sail-terracotta);
     width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--primary);
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--brass);
 }
 
 .navbar nav {
@@ -115,7 +118,7 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     background-color: var(--marine);
     color: var(--linen) !important;
     padding: 10px 24px;
-    border-radius: 2px;
+    border-radius: 0;
     border: 1px solid var(--brass);
     transition: background 0.4s, color 0.4s;
 }
@@ -139,7 +142,7 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     color: var(--linen-soft);
     padding: 0 20px;
     margin-top: 70px;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
 .hero-video-bg {
@@ -186,11 +189,13 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
 .booking-bar {
     background: var(--linen-soft);
     padding: 28px;
-    border-radius: 3px;
+    border-radius: 0;
     border: 1px solid var(--hairline);
     box-shadow: 0 20px 40px rgba(16, 38, 59, 0.15);
     position: absolute;
     bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 80%;
     max-width: 900px;
     z-index: 10;
@@ -224,11 +229,12 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
 .input-group input, .input-group select {
     padding: 10px;
     border: 1px solid var(--hairline);
-    border-radius: 2px;
+    border-radius: 0;
     font-size: 0.95rem;
     font-family: 'EB Garamond', Georgia, serif;
     color: var(--ink);
     background-color: var(--linen);
+    width: 100%;
 }
 
 .btn-search {
@@ -236,7 +242,7 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     color: var(--linen-soft);
     border: none;
     padding: 11px 22px;
-    border-radius: 2px;
+    border-radius: 0;
     font-weight: 600;
     font-variant: small-caps;
     letter-spacing: 1px;
@@ -251,9 +257,10 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
 
 /* SEÇÃO DE QUARTOS */
 .rooms-section {
-    padding: 90px 50px;
+    padding: 90px 20px;
     max-width: 1200px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .section-title {
@@ -273,51 +280,75 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     margin: 18px auto 45px auto;
 }
 
-.rooms-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 35px;
+.rooms-carousel {
+    position: relative;
+    padding: 0 35px; /* Mantém espaço interno para as setas não estourarem a tela */
 }
 
-/* Glassmorphism em tom marinho translúcido, com brilho dourado sutil ao passar o mouse */
+.rooms-grid {
+    display: flex;
+    gap: 35px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-behavior: smooth;
+    padding-bottom: 26px;
+}
+
+.rooms-grid::-webkit-scrollbar {
+    height: 6px;
+}
+.rooms-grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+.rooms-grid::-webkit-scrollbar-thumb {
+    background: var(--brass);
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--brass);
+    background: var(--linen-soft);
+    color: var(--marine);
+    font-size: 1.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    cursor: pointer;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+.carousel-arrow:hover {
+    background: var(--marine);
+    color: var(--linen-soft);
+}
+
+.arrow-left { left: -5px; }
+.arrow-right { right: -5px; }
+
 .room-card {
     background: var(--glass-navy);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--hairline);
-    border-radius: 2px;
+    border-radius: 0;
     overflow: hidden;
+    flex: 0 0 300px;
+    scroll-snap-align: start;
     box-shadow: 0 14px 30px rgba(16, 38, 59, 0.12);
     position: relative;
     transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
 }
 
-.room-card::before {
-    content: '';
-    position: absolute;
-    top: -60%;
-    left: -60%;
-    width: 220%;
-    height: 220%;
-    background: linear-gradient(
-        45deg,
-        transparent 46%,
-        rgba(216, 190, 126, 0.35) 50%,
-        transparent 54%
-    );
-    transform: rotate(25deg) translate(-100%, -100%);
-    transition: transform 0.8s ease-in-out;
-    pointer-events: none;
-}
-
-.room-card:hover::before {
-    transform: rotate(25deg) translate(100%, 100%);
-}
-
 .room-card:hover {
     transform: translateY(-6px);
     background: var(--glass-navy-strong);
-    box-shadow: 0 20px 40px rgba(16, 38, 59, 0.2), 0 0 20px rgba(176, 141, 63, 0.2);
+    box-shadow: 0 20px 40px rgba(16, 38, 59, 0.2);
 }
 
 .room-img {
@@ -329,6 +360,7 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
 
 .img-1 { background-image: url('https://images.unsplash.com/photo-1601701119532-6a56e792cdd3?q=80&w=800&auto=format&fit=crop'); }
 .img-2 { background-image: url('https://images.unsplash.com/photo-1515238152791-8226bf1a1a52?q=80&w=800&auto=format&fit=crop'); }
+.img-3 { background-image: url('https://picsum.photos/seed/hotelbase-executiva/800/600'); }
 
 .room-info {
     padding: 26px;
@@ -365,7 +397,7 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     color: var(--marine);
     border: 1px solid var(--marine);
     padding: 12px;
-    border-radius: 2px;
+    border-radius: 0;
     cursor: pointer;
     font-weight: 600;
     font-variant: small-caps;
@@ -378,18 +410,19 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     color: var(--linen-soft);
 }
 
-/* SEÇÃO DE AVALIAÇÕES — vidro em linho translúcido com brilho dourado animado */
+/* SEÇÃO DE AVALIAÇÕES */
 .reviews-section {
     background: radial-gradient(ellipse at top, #FBF8F1 0%, #EFE8D6 100%);
-    padding: 90px 50px;
+    padding: 90px 20px;
     position: relative;
+    overflow: hidden;
 }
 
 .reviews-container {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
@@ -399,39 +432,9 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     -webkit-backdrop-filter: blur(9px);
     border: 1px solid var(--hairline);
     padding: 32px;
-    border-radius: 2px;
+    border-radius: 0;
     box-shadow: 0 10px 24px rgba(16, 38, 59, 0.06);
     position: relative;
-    overflow: hidden;
-    transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
-}
-
-/* Brilho dourado (âncora visual em torno do "old money") */
-.review-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        45deg,
-        transparent 45%,
-        rgba(216, 190, 126, 0.55) 50%,
-        transparent 55%
-    );
-    transform: rotate(35deg) translate(-100%, -100%);
-    transition: transform 0.7s ease-in-out;
-}
-
-.review-card:hover::before {
-    transform: rotate(35deg) translate(100%, 100%);
-}
-
-.review-card:hover {
-    background: rgba(251, 248, 241, 0.92);
-    box-shadow: 0 16px 34px rgba(16, 38, 59, 0.1), 0 0 18px rgba(176, 141, 63, 0.3);
-    transform: translateY(-4px);
 }
 
 .google-icon {
@@ -490,10 +493,11 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
 
 /* SEÇÃO DE INSTAGRAM */
 .instagram-section {
-    padding: 90px 50px;
+    padding: 90px 20px;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    overflow: hidden;
 }
 
 .insta-handle {
@@ -516,8 +520,6 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     position: relative;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    border-radius: 2px;
-    cursor: pointer;
     border: 1px solid var(--hairline);
 }
 
@@ -551,7 +553,7 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     transform: scale(1.08);
 }
 
-/* SEÇÃO DO MAPA — moldura sofisticada estilo cartão-postal de época */
+/* SEÇÃO DO MAPA */
 .location-banner {
     background-color: var(--marine);
     color: var(--brass-light);
@@ -572,22 +574,11 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
 
 .map-container {
     background: var(--marine-deep);
-    padding: 55px 60px;
+    padding: 55px 20px;
     display: flex;
     justify-content: center;
     position: relative;
-}
-
-.map-container::before {
-    /* moldura de latão interna, como um mapa emoldurado */
-    content: '';
-    position: absolute;
-    top: 25px;
-    left: 30px;
-    right: 30px;
-    bottom: 25px;
-    border: 1px solid rgba(176, 141, 63, 0.4);
-    pointer-events: none;
+    overflow: hidden;
 }
 
 .map-container iframe {
@@ -604,8 +595,9 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
 .footer {
     background-color: var(--marine-deep);
     color: var(--linen);
-    padding: 70px 50px 30px 50px;
+    padding: 70px 20px 30px 20px;
     border-top: 3px solid var(--brass);
+    overflow: hidden;
 }
 
 .footer-container {
@@ -653,6 +645,7 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     color: var(--brass-light);
     border-radius: 50%;
     transition: background 0.3s, color 0.3s;
+    text-decoration: none;
 }
 .social-icons a:hover {
     background: var(--brass);
@@ -667,9 +660,10 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     font-size: 0.85rem;
     color: #7E8894;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
-/* BOTÃO FLUTUANTE WHATSAPP */
+/* WHATSAPP FLUTUANTE */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -693,11 +687,8 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     transform: scale(1.08);
 }
 
-/* =========================================
-   RESPONSIVIDADE (TELA DE CELULAR E TABLET)
-   ========================================= */
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
-
     .navbar {
         padding: 15px 20px;
         flex-direction: column;
@@ -713,10 +704,10 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     .hero {
         margin-top: 0;
         height: auto;
-        padding: 80px 20px;
+        padding: 60px 15px;
     }
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
     .hero-content p {
         font-size: 1rem;
@@ -726,8 +717,10 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     .booking-bar {
         position: relative;
         bottom: 0;
-        width: 90%;
-        margin: -40px auto 40px auto;
+        left: 0;
+        transform: none;
+        width: 92%;
+        margin: -20px auto 30px auto;
         padding: 20px;
     }
     #quick-booking-form {
@@ -740,14 +733,18 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     }
     .btn-search {
         width: 100%;
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
-    .rooms-section,
-    .reviews-section,
-    .instagram-section,
-    .footer {
-        padding: 50px 20px;
+    .rooms-carousel {
+        padding: 0;
+    }
+    .carousel-arrow {
+        display: none;
+    }
+
+    .room-card {
+        flex-basis: 260px;
     }
 
     .section-title, .banner-text {
@@ -755,15 +752,8 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     }
     .banner-text { letter-spacing: 3px; }
 
-    .map-container {
-        padding: 30px 20px;
-    }
-    .map-container::before {
-        top: 12px; left: 10px; right: 10px; bottom: 12px;
-    }
     .map-container iframe {
         height: 280px;
-        box-shadow: 0 0 0 6px var(--marine-deep), 0 12px 30px rgba(0,0,0,0.4);
     }
 
     .footer-container {
@@ -777,7 +767,6 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     .footer-bottom {
         justify-content: center;
         text-align: center;
-        gap: 10px;
     }
 
     .whatsapp-float {

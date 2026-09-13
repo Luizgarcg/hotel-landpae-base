@@ -1,21 +1,52 @@
-const WHATSAPP_NUMBER = "5583999999999"; 
+document.addEventListener("DOMContentLoaded", () => {
+  const roomsGrid = document.querySelector(".rooms-grid");
+  const arrowLeft = document.querySelector(".arrow-left");
+  const arrowRight = document.querySelector(".arrow-right");
 
-const bookingForm = document.getElementById("quick-booking-form");
-bookingForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-    const checkin = document.getElementById("checkin").value;
-    const checkout = document.getElementById("checkout").value;
-    const guests = document.getElementById("guests").value;
+  if (roomsGrid && arrowLeft && arrowRight) {
+    const scrollAmount = 1;
 
-    const message = `Olá! Gostaria de verificar a disponibilidade de reserva:%0A- Check-in: ${checkin}%0A- Check-out: ${checkout}%0A- Hóspedes: ${guests}`;
-    window.open(`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${message}`, "_blank");
-});
-
-const roomButtons = document.querySelectorAll(".btn-select-room");
-roomButtons.forEach(button => {
-    button.addEventListener("click", function() {
-        const roomName = this.getAttribute("data-room");
-        const message = `Olá! Tenho interesse em reservar a seguinte acomodação:%0A- Quarto: ${roomName}`;
-        window.open(`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${message}`, "_blank");
+    arrowLeft.addEventListener("click", () => {
+      roomsGrid.scrollBy({
+        left: -scrollAmount,
+        behavior: "smooth",
+      });
     });
+
+    arrowRight.addEventListener("click", () => {
+      roomsGrid.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    });
+  }
+
+  const quickBookingForm = document.getElementById("quick-booking-form");
+  if (quickBookingForm) {
+    quickBookingForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const checkin = document.getElementById("checkin").value;
+      const checkout = document.getElementById("checkout").value;
+      const guests = document.getElementById("guests").value;
+
+      if (!checkin || !checkout) {
+        alert("Por favor, preencha as datas de check-in e check-out.");
+        return;
+      }
+
+      alert(
+        `Buscando disponibilidade para ${guests} hóspede(s) de ${checkin} até ${checkout}.`,
+      );
+    });
+  }
+
+  const roomButtons = document.querySelectorAll(".btn-select-room");
+  roomButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const roomName = button.getAttribute("data-room");
+      alert(
+        `Acomodação selecionada: ${roomName}. Redirecionando para a reserva...`,
+      );
+    });
+  });
 });

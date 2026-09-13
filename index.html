@@ -6,6 +6,10 @@
     <title>HotelBase - Sua Estadia Perfeita</title>
     <!-- Importando ícones do FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fontes da identidade "Riviera old money" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <!-- Importando o CSS externo -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,7 +18,7 @@
     <!-- CABEÇALHO / NAVBAR -->
     <header class="navbar">
         <div class="logo">
-            <img src="https://i.pinimg.com/736x/ca/c5/79/cac5794023c62d35efe393f2abd85064.jpg" alt="" > hotel
+            <img src="https://i.pinimg.com/736x/ca/c5/79/cac5794023c62d35efe393f2abd85064.jpg" alt=""> hotel
         </div>
         <nav>
             <a href="#inicio">Início</a>
@@ -28,7 +32,7 @@
     <!-- SEÇÃO HERO -->
     <section id="inicio" class="hero">
         <video autoplay muted loop class="hero-video-bg">
-            <source src="https://www.pexels.com/pt-br/download/video/36328718/" type="video/mp4">
+            <source src="13972552_1920_1080_30fps.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
 
@@ -64,26 +68,53 @@
     <!-- SEÇÃO DE QUARTOS -->
     <section id="quartos" class="rooms-section">
         <h2 class="section-title">Nossas Acomodações</h2>
-        <div class="rooms-grid">
-            <div class="room-card">
-                <div class="room-img img-1"></div>
-                <div class="room-info">
-                    <h3>Suíte Standard</h3>
-                    <p>Ambiente aconchegante, ideal para casais, com cama queen size e vista para a cidade.</p>
-                    <span class="price">R$ 250 / noite</span>
-                    <button class="btn-select-room" data-room="Suíte Standard">Escolher</button>
+        
+        <div class="rooms-carousel">
+            <button class="carousel-arrow arrow-left">&#10094;</button>
+            
+            <div class="rooms-grid">
+                <div class="room-card">
+                    <div class="room-img img-1"></div>
+                    <div class="room-info">
+                        <h3>Suíte Standard</h3>
+                        <p>Ambiente aconchegante, ideal para casais, com cama queen size e vista para a cidade.</p>
+                        <span class="price">R$ 250 / noite</span>
+                        <button class="btn-select-room" data-room="Suíte Standard">Escolher</button>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-img img-2"></div>
+                    <div class="room-info">
+                        <h3>Suíte Master à Beira-Mar</h3>
+                        <p>Espaço amplo com vista panorâmica espetacular para o oceano e varanda privativa.</p>
+                        <span class="price">R$ 480 / noite</span>
+                        <button class="btn-select-room" data-room="Suíte Master à Beira-Mar">Escolher</button>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-img img-3"></div>
+                    <div class="room-info">
+                        <h3>Suíte Executiva</h3>
+                        <p>Escritório integrado e sala de estar separada, pensada para estadias de negócios.</p>
+                        <span class="price">R$ 390 / noite</span>
+                        <button class="btn-select-room" data-room="Suíte Executiva">Escolher</button>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-img img-4"></div>
+                    <div class="room-info">
+                        <h3>Cobertura Presidencial</h3>
+                        <p>Piscina privativa na cobertura e vista de 360° para a orla de Manaíra.</p>
+                        <span class="price">R$ 890 / noite</span>
+                        <button class="btn-select-room" data-room="Cobertura Presidencial">Escolher</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="room-card">
-                <div class="room-img img-2"></div>
-                <div class="room-info">
-                    <h3>Suíte Master à Beira-Mar</h3>
-                    <p>Espaço amplo com vista panorâmica espetacular para o oceano e varanda privativa.</p>
-                    <span class="price">R$ 480 / noite</span>
-                    <button class="btn-select-room" data-room="Suíte Master à Beira-Mar">Escolher</button>
-                </div>
-            </div>
+            <button class="carousel-arrow arrow-right">&#10095;</button>
         </div>
     </section>
 
@@ -221,7 +252,6 @@
 
         <div class="footer-bottom">
             <p>&copy; 2026 HotelBase. Todos os direitos reservados.</p>
-            
         </div>
     </footer>
 
