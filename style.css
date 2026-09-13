@@ -715,42 +715,43 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     }
 
     .booking-bar {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        transform: none;
-        width: 92%;
-        max-width: 450px;
-        margin: 25px auto 30px auto;
-        padding: 22px;
-        box-sizing: border-box;
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: 92% !important;
+        max-width: 400px !important;
+        margin: 25px auto 30px auto !important;
+        padding: 20px !important;
+        box-sizing: border-box !important;
     }
 
     #quick-booking-form {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-        gap: 15px;
-        box-sizing: border-box;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 15px !important;
+        box-sizing: border-box !important;
     }
 
     .input-group {
-        width: 100%;
-        min-width: 100%;
-        box-sizing: border-box;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
     .input-group input, 
     .input-group select {
-        width: 100%;
-        box-sizing: border-box;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        height: 42px !important;
     }
 
     .btn-search {
-        width: 100%;
-        margin-top: 5px;
-        box-sizing: border-box;
+        width: 100% !important;
+        height: 42px !important;
+        margin-top: 0 !important;
+        box-sizing: border-box !important;
+        display: block !important;
     }
 
     .rooms-carousel {
