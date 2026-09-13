@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HotelBase - Sua Estadia Perfeita</title>
+    <title>HotelBase - Your Perfect Stay</title>
     <!-- Importando ícones do FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Fontes da identidade "Riviera old money" -->
@@ -21,11 +21,11 @@
             <img src="https://i.pinimg.com/736x/ca/c5/79/cac5794023c62d35efe393f2abd85064.jpg" alt=""> hotel
         </div>
         <nav>
-            <a href="#inicio">Início</a>
-            <a href="#quartos">Acomodações</a>
-            <a href="#avaliacoes">Avaliações</a>
-            <a href="#localizacao">Localização</a>
-            <a href="#contato" class="btn-nav">Reservar</a>
+            <a href="#inicio">Home</a>
+            <a href="#quartos">Accommodations</a>
+            <a href="#avaliacoes">Reviews</a>
+            <a href="#localizacao">Location</a>
+            <a href="#contato" class="btn-nav">Book Now</a>
         </nav>
     </header>
 
@@ -37,8 +37,8 @@
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
-            <h1>Descubra o conforto à beira-mar</h1>
-            <p>Aproveite momentos inesquecíveis com total comodidade e exclusividade.</p>
+            <h1>Discover beachfront comfort</h1>
+            <p>Enjoy unforgettable moments with total convenience and exclusivity.</p>
         </div>
 
         <div class="booking-bar">
@@ -52,22 +52,22 @@
                     <input type="date" id="checkout" required>
                 </div>
                 <div class="input-group">
-                    <label>Hóspedes</label>
+                    <label>Guests</label>
                     <select id="guests">
-                        <option value="1">1 Hóspede</option>
-                        <option value="2" selected>2 Hóspedes</option>
-                        <option value="3">3 Hóspedes</option>
-                        <option value="4">4+ Hóspedes</option>
+                        <option value="1">1 Guest</option>
+                        <option value="2" selected>2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4+ Guests</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-search">Ver Disponibilidade</button>
+                <button type="submit" class="btn-search">Check Availability</button>
             </form>
         </div>
     </section>
 
     <!-- SEÇÃO DE QUARTOS -->
     <section id="quartos" class="rooms-section">
-        <h2 class="section-title">Nossas Acomodações</h2>
+        <h2 class="section-title">Our Accommodations</h2>
         
         <div class="rooms-carousel">
             <button class="carousel-arrow arrow-left">&#10094;</button>
@@ -76,40 +76,40 @@
                 <div class="room-card">
                     <div class="room-img img-1"></div>
                     <div class="room-info">
-                        <h3>Suíte Standard</h3>
-                        <p>Ambiente aconchegante, ideal para casais, com cama queen size e vista para a cidade.</p>
-                        <span class="price">R$ 250 / noite</span>
-                        <button class="btn-select-room" data-room="Suíte Standard">Escolher</button>
+                        <h3>Standard Suite</h3>
+                        <p>Cozy atmosphere, ideal for couples, featuring a queen-size bed and city view.</p>
+                        <span class="price">$250 / night</span>
+                        <button class="btn-select-room" data-room="Standard Suite">Choose</button>
                     </div>
                 </div>
 
                 <div class="room-card">
                     <div class="room-img img-2"></div>
                     <div class="room-info">
-                        <h3>Suíte Master à Beira-Mar</h3>
-                        <p>Espaço amplo com vista panorâmica espetacular para o oceano e varanda privativa.</p>
-                        <span class="price">R$ 480 / noite</span>
-                        <button class="btn-select-room" data-room="Suíte Master à Beira-Mar">Escolher</button>
+                        <h3>Oceanfront Master Suite</h3>
+                        <p>Spacious area with spectacular panoramic ocean views and a private balcony.</p>
+                        <span class="price">$480 / night</span>
+                        <button class="btn-select-room" data-room="Oceanfront Master Suite">Choose</button>
                     </div>
                 </div>
 
                 <div class="room-card">
                     <div class="room-img img-3"></div>
                     <div class="room-info">
-                        <h3>Suíte Executiva</h3>
-                        <p>Escritório integrado e sala de estar separada, pensada para estadias de negócios.</p>
-                        <span class="price">R$ 390 / noite</span>
-                        <button class="btn-select-room" data-room="Suíte Executiva">Escolher</button>
+                        <h3>Executive Suite</h3>
+                        <p>Integrated office and separate living room, designed for business stays.</p>
+                        <span class="price">$390 / night</span>
+                        <button class="btn-select-room" data-room="Executive Suite">Choose</button>
                     </div>
                 </div>
 
                 <div class="room-card">
                     <div class="room-img img-4"></div>
                     <div class="room-info">
-                        <h3>Cobertura Presidencial</h3>
-                        <p>Piscina privativa na cobertura e vista de 360° para a orla de Manaíra.</p>
-                        <span class="price">R$ 890 / noite</span>
-                        <button class="btn-select-room" data-room="Cobertura Presidencial">Escolher</button>
+                        <h3>Presidential Penthouse</h3>
+                        <p>Private rooftop pool and 360° view of the coastline.</p>
+                        <span class="price">$890 / night</span>
+                        <button class="btn-select-room" data-room="Presidential Penthouse">Choose</button>
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
 
     <!-- AVALIAÇÕES (SIMULANDO GOOGLE MAPS) -->
     <section id="avaliacoes" class="reviews-section">
-        <h2 class="section-title">O que dizem nossos hóspedes</h2>
+        <h2 class="section-title">What our guests say</h2>
         <div class="reviews-container">
             <div class="review-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo" class="google-icon">
@@ -128,13 +128,13 @@
                     <div class="reviewer-avatar" style="background-color: #f56565;">M</div>
                     <div>
                         <div class="reviewer-name">Maria Silva</div>
-                        <div class="review-date">Há 2 semanas</div>
+                        <div class="review-date">2 weeks ago</div>
                     </div>
                 </div>
                 <div class="stars">
                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <p class="review-text">"Estadia maravilhosa! O atendimento da equipe foi impecável e a vista do quarto para a praia de Manaíra é de tirar o fôlego. Voltarei com certeza."</p>
+                <p class="review-text">"Wonderful stay! The staff service was impeccable and the view of the beach from the room is breathtaking. I will definitely come back."</p>
             </div>
 
             <div class="review-card">
@@ -143,13 +143,13 @@
                     <div class="reviewer-avatar" style="background-color: #4299e1;">J</div>
                     <div>
                         <div class="reviewer-name">João Carlos</div>
-                        <div class="review-date">Há 1 mês</div>
+                        <div class="review-date">1 month ago</div>
                     </div>
                 </div>
                 <div class="stars">
                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
                 </div>
-                <p class="review-text">"Ótima localização, perto de vários restaurantes. O café da manhã tem muitas opções regionais deliciosas."</p>
+                <p class="review-text">"Great location, close to several restaurants. Breakfast has many delicious regional options."</p>
             </div>
             
             <div class="review-card">
@@ -158,39 +158,39 @@
                     <div class="reviewer-avatar" style="background-color: #48bb78;">A</div>
                     <div>
                         <div class="reviewer-name">Ana Beatriz</div>
-                        <div class="review-date">Há 3 meses</div>
+                        <div class="review-date">3 months ago</div>
                     </div>
                 </div>
                 <div class="stars">
                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <p class="review-text">"Quartos extremamente limpos e confortáveis. A piscina na cobertura é um espetáculo no pôr do sol."</p>
+                <p class="review-text">"Extremely clean and comfortable rooms. The rooftop pool is a spectacle at sunset."</p>
             </div>
         </div>
     </section>
 
     <!-- FEED DO INSTAGRAM -->
     <section class="instagram-section">
-        <h2 class="section-title" style="margin-bottom: 5px;">Acompanhe nosso dia a dia</h2>
+        <h2 class="section-title" style="margin-bottom: 5px;">Follow our daily routine</h2>
         <a href="#" class="insta-handle"><i class="fa-brands fa-instagram"></i> @hotelbase_jp</a>
         
         <div class="insta-grid">
             <div class="insta-item">
-                <img src="https://i.pinimg.com/736x/79/9a/16/799a1616418dae8a1ba1e8876d28eadf.jpg" alt="Piscina">
+                <img src="https://i.pinimg.com/736x/79/9a/16/799a1616418dae8a1ba1e8876d28eadf.jpg" alt="Pool">
                 <div class="insta-overlay">
                     <span><i class="fa-solid fa-heart"></i> 142</span>
                     <span><i class="fa-solid fa-comment"></i> 12</span>
                 </div>
             </div>
             <div class="insta-item">
-                <img src="https://i.pinimg.com/1200x/bd/ca/78/bdca785da385fb24e4c6955e0706b90c.jpg" alt="Café da manhã">
+                <img src="https://i.pinimg.com/1200x/bd/ca/78/bdca785da385fb24e4c6955e0706b90c.jpg" alt="Breakfast">
                 <div class="insta-overlay">
                     <span><i class="fa-solid fa-heart"></i> 256</span>
                     <span><i class="fa-solid fa-comment"></i> 34</span>
                 </div>
             </div>
             <div class="insta-item">
-                <img src="https://i.pinimg.com/736x/ca/c5/79/cac5794023c62d35efe393f2abd85064.jpg" alt="Praia">
+                <img src="https://i.pinimg.com/736x/ca/c5/79/cac5794023c62d35efe393f2abd85064.jpg" alt="Beach">
                 <div class="insta-overlay">
                     <span><i class="fa-solid fa-heart"></i> 512</span>
                     <span><i class="fa-solid fa-comment"></i> 45</span>
@@ -223,7 +223,7 @@
         <div class="footer-container">
             <div class="footer-col">
                 <h3 style="font-weight: bold; font-size: 1.4rem;"><i class="fa-solid fa-hotel"></i> HOTELBASE</h3>
-                <p>Sua estadia perfeita com sofisticação e conforto à beira-mar.</p>
+                <p>Your perfect stay with sophistication and beachfront comfort.</p>
                 <div class="social-icons">
                     <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -232,31 +232,31 @@
             </div>
 
             <div class="footer-col">
-                <h3>Reservas</h3>
-                <a href="#inicio">Disponibilidades e Reservas</a>
-                <a href="#quartos">Ver Acomodações</a>
+                <h3>Reservations</h3>
+                <a href="#inicio">Availability & Booking</a>
+                <a href="#quartos">View Accommodations</a>
             </div>
 
             <div class="footer-col">
-                <h3>Contato</h3>
+                <h3>Contact</h3>
                 <a href="mailto:reservas@hotelbase.com">reservas@hotelbase.com</a>
                 <p>+55 (83) 3216-8811</p>
                 <p>+55 (83) 98767-1313</p>
             </div>
 
             <div class="footer-col">
-                <h3>Localização</h3>
-                <p>Av. Principal, 1341 - Manaíra<br>João Pessoa - PB, 58038-000</p>
+                <h3>Location</h3>
+                <p>Main Ave., 1341 - Manaíra<br>João Pessoa - PB, 58038-000</p>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 HotelBase. Todos os direitos reservados.</p>
+            <p>&copy; 2026 HotelBase. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
-    <a href="https://api.whatsapp.com/send?phone=5583999999999&text=Olá! Gostaria de tirar dúvidas sobre o HotelBase." class="whatsapp-float" target="_blank">
+    <a href="https://api.whatsapp.com/send?phone=5583999999999&text=Hello! I would like to ask questions about HotelBase." class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
