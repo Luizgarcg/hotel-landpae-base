@@ -1,0 +1,790 @@
+/* =========================================
+   HOTELBASE — IDENTIDADE "RIVIERA OLD MONEY"
+   Paleta: mar profundo, linho, terracota vela,
+   dourado latão — referência à Riviera Italiana
+   dos anos 50/60 (Portofino, Capri).
+   ========================================= */
+:root {
+    --marine:        #10263B;   /* azul-marinho profundo, o casco do barco */
+    --marine-deep:    #0A1B2C;
+    --linen:          #F6F1E4;   /* areia/linho, fundo geral */
+    --linen-soft:     #FBF8F1;
+    --sail-terracotta:#C1652E;   /* toldo/vela — laranja queimado */
+    --sail-terracotta-dark:#9C4E22;
+    --brass:          #B08D3F;   /* dourado latão, leme e joias */
+    --brass-light:    #D8BE7E;
+    --denim:          #6E8EA3;   /* mar/céu desbotado */
+    --ink:            #1E2A30;
+    --glass-navy:     rgba(16, 38, 59, 0.42);
+    --glass-navy-strong: rgba(16, 38, 59, 0.62);
+    --glass-linen:    rgba(246, 241, 228, 0.6);
+    --hairline:       rgba(176, 141, 63, 0.35);
+}
+
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+}
+
+body {
+    background-color: var(--linen);
+    color: var(--ink);
+    line-height: 1.65;
+}
+
+/* Títulos com design Europeu Clássico */
+h1, h2, h3, .logo, .banner-text, .footer-col h3 {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 50px;
+    background-color: rgba(251, 248, 241, 0.92);
+    border-bottom: 1px solid var(--hairline);
+    box-shadow: 0 4px 20px rgba(16, 38, 59, 0.05);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.logo img {
+    color: var(--sail-terracotta);
+    width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary);
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--marine);
+    font-weight: 500;
+    font-variant: small-caps;
+    font-size: 1rem;
+    letter-spacing: 1.2px;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.4s;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--brass);
+    transition: width 0.35s ease;
+}
+
+.navbar a:hover {
+    color: var(--sail-terracotta-dark);
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.btn-nav {
+    background-color: var(--marine);
+    color: var(--linen) !important;
+    padding: 10px 24px;
+    border-radius: 2px;
+    border: 1px solid var(--brass);
+    transition: background 0.4s, color 0.4s;
+}
+
+.btn-nav::after { display: none; }
+
+.btn-nav:hover {
+    background-color: var(--sail-terracotta-dark);
+    color: var(--linen) !important;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 85vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--linen-soft);
+    padding: 0 20px;
+    margin-top: 70px;
+    margin-bottom: 80px;
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    object-fit: cover;
+    filter: saturate(0.9) contrast(1.05);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10, 27, 44, 0.25), rgba(10, 27, 44, 0.65));
+    z-index: -1;
+}
+
+.hero-content h1 {
+    font-size: 4.2rem;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+    font-style: italic;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.35);
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    margin-bottom: 40px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.35);
+}
+
+/* BARRA DE RESERVA FLUTUANTE */
+.booking-bar {
+    background: var(--linen-soft);
+    padding: 28px;
+    border-radius: 3px;
+    border: 1px solid var(--hairline);
+    box-shadow: 0 20px 40px rgba(16, 38, 59, 0.15);
+    position: absolute;
+    bottom: -50px;
+    width: 80%;
+    max-width: 900px;
+    z-index: 10;
+}
+
+#quick-booking-form {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex: 1;
+    min-width: 150px;
+}
+
+.input-group label {
+    font-size: 0.78rem;
+    color: var(--marine);
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.input-group input, .input-group select {
+    padding: 10px;
+    border: 1px solid var(--hairline);
+    border-radius: 2px;
+    font-size: 0.95rem;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    background-color: var(--linen);
+}
+
+.btn-search {
+    background-color: var(--sail-terracotta);
+    color: var(--linen-soft);
+    border: none;
+    padding: 11px 22px;
+    border-radius: 2px;
+    font-weight: 600;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s;
+    height: 42px;
+}
+
+.btn-search:hover {
+    background-color: var(--sail-terracotta-dark);
+}
+
+/* SEÇÃO DE QUARTOS */
+.rooms-section {
+    padding: 90px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2.7rem;
+    color: var(--marine);
+}
+
+.rooms-section .section-title::after,
+.reviews-section .section-title::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 1px;
+    background: var(--brass);
+    margin: 18px auto 45px auto;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+}
+
+/* Glassmorphism em tom marinho translúcido, com brilho dourado sutil ao passar o mouse */
+.room-card {
+    background: var(--glass-navy);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--hairline);
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 14px 30px rgba(16, 38, 59, 0.12);
+    position: relative;
+    transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.room-card::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -60%;
+    width: 220%;
+    height: 220%;
+    background: linear-gradient(
+        45deg,
+        transparent 46%,
+        rgba(216, 190, 126, 0.35) 50%,
+        transparent 54%
+    );
+    transform: rotate(25deg) translate(-100%, -100%);
+    transition: transform 0.8s ease-in-out;
+    pointer-events: none;
+}
+
+.room-card:hover::before {
+    transform: rotate(25deg) translate(100%, 100%);
+}
+
+.room-card:hover {
+    transform: translateY(-6px);
+    background: var(--glass-navy-strong);
+    box-shadow: 0 20px 40px rgba(16, 38, 59, 0.2), 0 0 20px rgba(176, 141, 63, 0.2);
+}
+
+.room-img {
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+    filter: saturate(0.95);
+}
+
+.img-1 { background-image: url('https://images.unsplash.com/photo-1601701119532-6a56e792cdd3?q=80&w=800&auto=format&fit=crop'); }
+.img-2 { background-image: url('https://images.unsplash.com/photo-1515238152791-8226bf1a1a52?q=80&w=800&auto=format&fit=crop'); }
+
+.room-info {
+    padding: 26px;
+    text-align: center;
+    background: var(--linen-soft);
+}
+
+.room-info h3 {
+    margin-bottom: 10px;
+    color: var(--marine);
+    font-size: 1.55rem;
+}
+
+.room-info p {
+    font-size: 0.92rem;
+    color: #6A747C;
+    margin-bottom: 16px;
+}
+
+.price {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--sail-terracotta-dark);
+    margin-bottom: 20px;
+    padding-top: 10px;
+    border-top: 1px solid var(--hairline);
+}
+
+.btn-select-room {
+    width: 100%;
+    background-color: transparent;
+    color: var(--marine);
+    border: 1px solid var(--marine);
+    padding: 12px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: 600;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-select-room:hover {
+    background-color: var(--marine);
+    color: var(--linen-soft);
+}
+
+/* SEÇÃO DE AVALIAÇÕES — vidro em linho translúcido com brilho dourado animado */
+.reviews-section {
+    background: radial-gradient(ellipse at top, #FBF8F1 0%, #EFE8D6 100%);
+    padding: 90px 50px;
+    position: relative;
+}
+
+.reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.review-card {
+    background: var(--glass-linen);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border: 1px solid var(--hairline);
+    padding: 32px;
+    border-radius: 2px;
+    box-shadow: 0 10px 24px rgba(16, 38, 59, 0.06);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+
+/* Brilho dourado (âncora visual em torno do "old money") */
+.review-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 45%,
+        rgba(216, 190, 126, 0.55) 50%,
+        transparent 55%
+    );
+    transform: rotate(35deg) translate(-100%, -100%);
+    transition: transform 0.7s ease-in-out;
+}
+
+.review-card:hover::before {
+    transform: rotate(35deg) translate(100%, 100%);
+}
+
+.review-card:hover {
+    background: rgba(251, 248, 241, 0.92);
+    box-shadow: 0 16px 34px rgba(16, 38, 59, 0.1), 0 0 18px rgba(176, 141, 63, 0.3);
+    transform: translateY(-4px);
+}
+
+.google-icon {
+    position: absolute;
+    top: 26px;
+    right: 26px;
+    width: 22px;
+    opacity: 0.75;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.reviewer-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid var(--brass-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.reviewer-name {
+    font-weight: 600;
+    color: var(--marine);
+    font-size: 1.08rem;
+}
+
+.review-date {
+    font-size: 0.8rem;
+    color: #8C8065;
+}
+
+.stars {
+    color: var(--brass);
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    color: #4E5A54;
+    font-size: 0.98rem;
+    font-style: italic;
+    line-height: 1.85;
+}
+
+/* SEÇÃO DE INSTAGRAM */
+.instagram-section {
+    padding: 90px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.insta-handle {
+    color: var(--sail-terracotta-dark);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.insta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.insta-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 2px;
+    cursor: pointer;
+    border: 1px solid var(--hairline);
+}
+
+.insta-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.9);
+    transition: transform 0.4s;
+}
+
+.insta-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(16, 38, 59, 0.62);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: var(--brass-light);
+    font-size: 1.4rem;
+    opacity: 0;
+    transition: opacity 0.35s;
+}
+
+.insta-item:hover .insta-overlay {
+    opacity: 1;
+}
+
+.insta-item:hover img {
+    transform: scale(1.08);
+}
+
+/* SEÇÃO DO MAPA — moldura sofisticada estilo cartão-postal de época */
+.location-banner {
+    background-color: var(--marine);
+    color: var(--brass-light);
+    padding: 22px 0;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 1px solid var(--brass);
+    border-bottom: 1px solid var(--brass);
+}
+
+.banner-text {
+    font-size: 1.6rem;
+    letter-spacing: 5px;
+    font-style: italic;
+    font-variant: small-caps;
+}
+
+.map-container {
+    background: var(--marine-deep);
+    padding: 55px 60px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.map-container::before {
+    /* moldura de latão interna, como um mapa emoldurado */
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    right: 30px;
+    bottom: 25px;
+    border: 1px solid rgba(176, 141, 63, 0.4);
+    pointer-events: none;
+}
+
+.map-container iframe {
+    width: 100%;
+    max-width: 1100px;
+    height: 420px;
+    border: 1px solid var(--brass);
+    display: block;
+    filter: sepia(0.25) saturate(0.85) contrast(1.02);
+    box-shadow: 0 0 0 10px var(--marine-deep), 0 20px 45px rgba(0,0,0,0.4);
+}
+
+/* RODAPÉ */
+.footer {
+    background-color: var(--marine-deep);
+    color: var(--linen);
+    padding: 70px 50px 30px 50px;
+    border-top: 3px solid var(--brass);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    border-bottom: 1px solid rgba(216, 190, 126, 0.15);
+    padding-bottom: 40px;
+}
+
+.footer-col h3 {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    color: var(--brass-light);
+}
+
+.footer-col p, .footer-col a {
+    display: block;
+    font-size: 0.95rem;
+    color: #C7CBD1;
+    text-decoration: none;
+    margin-bottom: 12px;
+}
+
+.footer-col a:hover {
+    color: var(--brass-light);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid var(--brass);
+    color: var(--brass-light);
+    border-radius: 50%;
+    transition: background 0.3s, color 0.3s;
+}
+.social-icons a:hover {
+    background: var(--brass);
+    color: var(--marine-deep);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #7E8894;
+    flex-wrap: wrap;
+}
+
+/* BOTÃO FLUTUANTE WHATSAPP */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: white;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    border: 2px solid var(--linen-soft);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    z-index: 1000;
+    transition: transform 0.3s;
+    text-decoration: none;
+}
+.whatsapp-float:hover {
+    transform: scale(1.08);
+}
+
+/* =========================================
+   RESPONSIVIDADE (TELA DE CELULAR E TABLET)
+   ========================================= */
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+        position: relative;
+    }
+    .navbar nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        margin-top: 0;
+        height: auto;
+        padding: 80px 20px;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .booking-bar {
+        position: relative;
+        bottom: 0;
+        width: 90%;
+        margin: -40px auto 40px auto;
+        padding: 20px;
+    }
+    #quick-booking-form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    .input-group {
+        min-width: 100%;
+    }
+    .btn-search {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .rooms-section,
+    .reviews-section,
+    .instagram-section,
+    .footer {
+        padding: 50px 20px;
+    }
+
+    .section-title, .banner-text {
+        font-size: 1.8rem;
+    }
+    .banner-text { letter-spacing: 3px; }
+
+    .map-container {
+        padding: 30px 20px;
+    }
+    .map-container::before {
+        top: 12px; left: 10px; right: 10px; bottom: 12px;
+    }
+    .map-container iframe {
+        height: 280px;
+        box-shadow: 0 0 0 6px var(--marine-deep), 0 12px 30px rgba(0,0,0,0.4);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+    .footer-bottom {
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        bottom: 20px;
+        right: 20px;
+    }
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotelBase - Sua Estadia Perfeita</title>
+    <!-- Importando ícones do FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Importando o CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO / NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="https://i.pinimg.com/736x/ca/c5/79/cac5794023c62d35efe393f2abd85064.jpg" alt="" > hotel
+        </div>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#quartos">Acomodações</a>
+            <a href="#avaliacoes">Avaliações</a>
+            <a href="#localizacao">Localização</a>
+            <a href="#contato" class="btn-nav">Reservar</a>
+        </nav>
+    </header>
+
+    <!-- SEÇÃO HERO -->
+    <section id="inicio" class="hero">
+        <video autoplay muted loop class="hero-video-bg">
+            <source src="https://www.pexels.com/pt-br/download/video/36328718/" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1>Descubra o conforto à beira-mar</h1>
+            <p>Aproveite momentos inesquecíveis com total comodidade e exclusividade.</p>
+        </div>
+
+        <div class="booking-bar">
+            <form id="quick-booking-form">
+                <div class="input-group">
+                    <label>Check-in</label>
+                    <input type="date" id="checkin" required>
+                </div>
+                <div class="input-group">
+                    <label>Check-out</label>
+                    <input type="date" id="checkout" required>
+                </div>
+                <div class="input-group">
+                    <label>Hóspedes</label>
+                    <select id="guests">
+                        <option value="1">1 Hóspede</option>
+                        <option value="2" selected>2 Hóspedes</option>
+                        <option value="3">3 Hóspedes</option>
+                        <option value="4">4+ Hóspedes</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-search">Ver Disponibilidade</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE QUARTOS -->
+    <section id="quartos" class="rooms-section">
+        <h2 class="section-title">Nossas Acomodações</h2>
+        <div class="rooms-grid">
+            <div class="room-card">
+                <div class="room-img img-1"></div>
+                <div class="room-info">
+                    <h3>Suíte Standard</h3>
+                    <p>Ambiente aconchegante, ideal para casais, com cama queen size e vista para a cidade.</p>
+                    <span class="price">R$ 250 / noite</span>
+                    <button class="btn-select-room" data-room="Suíte Standard">Escolher</button>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <div class="room-img img-2"></div>
+                <div class="room-info">
+                    <h3>Suíte Master à Beira-Mar</h3>
+                    <p>Espaço amplo com vista panorâmica espetacular para o oceano e varanda privativa.</p>
+                    <span class="price">R$ 480 / noite</span>
+                    <button class="btn-select-room" data-room="Suíte Master à Beira-Mar">Escolher</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AVALIAÇÕES (SIMULANDO GOOGLE MAPS) -->
+    <section id="avaliacoes" class="reviews-section">
+        <h2 class="section-title">O que dizem nossos hóspedes</h2>
+        <div class="reviews-container">
+            <div class="review-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo" class="google-icon">
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar" style="background-color: #f56565;">M</div>
+                    <div>
+                        <div class="reviewer-name">Maria Silva</div>
+                        <div class="review-date">Há 2 semanas</div>
+                    </div>
+                </div>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"Estadia maravilhosa! O atendimento da equipe foi impecável e a vista do quarto para a praia de Manaíra é de tirar o fôlego. Voltarei com certeza."</p>
+            </div>
+
+            <div class="review-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo" class="google-icon">
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar" style="background-color: #4299e1;">J</div>
+                    <div>
+                        <div class="reviewer-name">João Carlos</div>
+                        <div class="review-date">Há 1 mês</div>
+                    </div>
+                </div>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p class="review-text">"Ótima localização, perto de vários restaurantes. O café da manhã tem muitas opções regionais deliciosas."</p>
+            </div>
+            
+            <div class="review-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo" class="google-icon">
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar" style="background-color: #48bb78;">A</div>
+                    <div>
+                        <div class="reviewer-name">Ana Beatriz</div>
+                        <div class="review-date">Há 3 meses</div>
+                    </div>
+                </div>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"Quartos extremamente limpos e confortáveis. A piscina na cobertura é um espetáculo no pôr do sol."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEED DO INSTAGRAM -->
+    <section class="instagram-section">
+        <h2 class="section-title" style="margin-bottom: 5px;">Acompanhe nosso dia a dia</h2>
+        <a href="#" class="insta-handle"><i class="fa-brands fa-instagram"></i> @hotelbase_jp</a>
+        
+        <div class="insta-grid">
+            <div class="insta-item">
+                <img src="https://i.pinimg.com/736x/79/9a/16/799a1616418dae8a1ba1e8876d28eadf.jpg" alt="Piscina">
+                <div class="insta-overlay">
+                    <span><i class="fa-solid fa-heart"></i> 142</span>
+                    <span><i class="fa-solid fa-comment"></i> 12</span>
+                </div>
+            </div>
+            <div class="insta-item">
+                <img src="https://i.pinimg.com/1200x/bd/ca/78/bdca785da385fb24e4c6955e0706b90c.jpg" alt="Café da manhã">
+                <div class="insta-overlay">
+                    <span><i class="fa-solid fa-heart"></i> 256</span>
+                    <span><i class="fa-solid fa-comment"></i> 34</span>
+                </div>
+            </div>
+            <div class="insta-item">
+                <img src="https://i.pinimg.com/736x/ca/c5/79/cac5794023c62d35efe393f2abd85064.jpg" alt="Praia">
+                <div class="insta-overlay">
+                    <span><i class="fa-solid fa-heart"></i> 512</span>
+                    <span><i class="fa-solid fa-comment"></i> 45</span>
+                </div>
+            </div>
+            <div class="insta-item">
+                <img src="https://i.pinimg.com/1200x/c8/d1/cb/c8d1cb9a58b84fac3b57e73f0bb02ce8.jpg" alt="Drink">
+                <div class="insta-overlay">
+                    <span><i class="fa-solid fa-heart"></i> 189</span>
+                    <span><i class="fa-solid fa-comment"></i> 8</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO & GOOGLE MAPS -->
+    <section id="localizacao">
+        <div class="location-banner">
+            <div class="banner-text">
+                LA BELA VITA
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15835.918889985229!2d-34.834015699999995!3d-7.11211025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ace81085023edb%3A0xa64627b38c2089f2!2sMana%C3%ADra%2C%20Jo%C3%A3o%20Pessoa%20-%20PB!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer id="contato" class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 style="font-weight: bold; font-size: 1.4rem;"><i class="fa-solid fa-hotel"></i> HOTELBASE</h3>
+                <p>Sua estadia perfeita com sofisticação e conforto à beira-mar.</p>
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Reservas</h3>
+                <a href="#inicio">Disponibilidades e Reservas</a>
+                <a href="#quartos">Ver Acomodações</a>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contato</h3>
+                <a href="mailto:reservas@hotelbase.com">reservas@hotelbase.com</a>
+                <p>+55 (83) 3216-8811</p>
+                <p>+55 (83) 98767-1313</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Localização</h3>
+                <p>Av. Principal, 1341 - Manaíra<br>João Pessoa - PB, 58038-000</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 HotelBase. Todos os direitos reservados.</p>
+            
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <a href="https://api.whatsapp.com/send?phone=5583999999999&text=Olá! Gostaria de tirar dúvidas sobre o HotelBase." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Importando o JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
