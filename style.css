@@ -729,7 +729,7 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
     #quick-booking-form {
         display: flex !important;
         flex-direction: column !important;
-        align-items: stretch !important; /* CORREÇÃO DO ALINHAMENTO NO IOS */
+        align-items: stretch !important;
         width: 100% !important;
         gap: 15px !important;
         box-sizing: border-box !important;
@@ -745,6 +745,14 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
         width: 100% !important;
         box-sizing: border-box !important;
         height: 42px !important;
+        -webkit-appearance: none !important; /* Mata o estilo nativo do iOS no select */
+        appearance: none !important;
+        border-radius: 0 !important;
+    }
+
+    /* Ajuste para o select não perder o padding no mobile */
+    .input-group select {
+        padding: 0 10px !important;
     }
 
     .btn-search {
@@ -752,9 +760,12 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
         height: 42px !important;
         margin-top: 0 !important;
         box-sizing: border-box !important;
-        display: block !important;
-        -webkit-appearance: none !important; /* CORREÇÃO DO BOTÃO NO SAFARI */
+        display: flex !important;          /* Centraliza o texto perfeitamente no iOS */
+        align-items: center !important;
+        justify-content: center !important;
+        -webkit-appearance: none !important;
         appearance: none !important;
+        border-radius: 0 !important;
     }
 
     .rooms-carousel {
