@@ -716,24 +716,41 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
 
     .booking-bar {
         position: relative;
-        bottom: 0;
-        left: 0;
+        bottom: auto;
+        left: auto;
         transform: none;
         width: 92%;
-        margin: 20px auto 30px auto;
-        padding: 20px;
+        max-width: 450px;
+        margin: 25px auto 30px auto;
+        padding: 22px;
+        box-sizing: border-box;
     }
+
     #quick-booking-form {
+        display: flex;
         flex-direction: column;
         align-items: stretch;
+        width: 100%;
         gap: 15px;
+        box-sizing: border-box;
     }
+
     .input-group {
+        width: 100%;
         min-width: 100%;
+        box-sizing: border-box;
     }
+
+    .input-group input, 
+    .input-group select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
     .btn-search {
         width: 100%;
         margin-top: 5px;
+        box-sizing: border-box;
     }
 
     .rooms-carousel {
