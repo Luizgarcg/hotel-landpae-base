@@ -720,7 +720,7 @@ h1, h2, h3, .logo, .banner-text, .footer-col h3 {
         left: 0;
         transform: none;
         width: 92%;
-        margin: -20px auto 30px auto;
+        margin: 20px auto 30px auto;
         padding: 20px;
     }
     #quick-booking-form {
